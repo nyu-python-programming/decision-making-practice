@@ -7,139 +7,147 @@ Your job is to complete the definitions of each function so that it achieves its
 import math
 import datetime
 
+
 def get_year():
-  """
-  This function is given to you... it is used by the is_leap_year() function below.
-  Do not modify this function.
-    :returns: The current year, e.g. 2020
-  """
-  now = datetime.datetime.now() # get the current time now
-  year = now.year  # the current year
-  return year
+    """
+    This function is given to you... it is used by the is_leap_year() function below.
+    Do not modify this function.
+      :returns: The current year, e.g. 2020
+    """
+    now = datetime.datetime.now()  # get the current time now
+    year = now.year  # the current year
+    return year
+
 
 def is_square():
-  """
-  Asks the user to enter the width and height of an area in inches and determines whether it is square.
-  Users can enter either integers or floating point numbers.
+    """
+    Asks the user to enter the width and height of an area in inches and determines whether it is square.
+    Users can enter either integers or floating point numbers.
 
-    :returns: True if square (i.e. if equal length and height), False otherwise.
-  """
-  #### write your solution for this function below here. ####
-  width = input("Enter width: ")
-  height = input("Enter width: ")
-  try:
-    width = float(width)
-    height = float(height)
-    return width == height
-  except ValueError:
-    return False
+      :returns: True if square (i.e. if equal length and height), False otherwise.
+    """
+    #### write your solution for this function below here. ####
+    width = input("Enter width: ")
+    height = input("Enter width: ")
+    try:
+        width = float(width)
+        height = float(height)
+        return width == height
+    except ValueError:
+        return False
+
 
 def get_greatest():
-  """
-  Asks the user for two integers, and returns the number that is greatest, as an int.
-  You are not allowed to use Python's builtin max() function for this.
-  If both numbers are the same, return that number.
+    """
+    Asks the user for two integers, and returns the number that is greatest, as an int.
+    You are not allowed to use Python's builtin max() function for this.
+    If both numbers are the same, return that number.
 
-  :returns: the greatest of the two input numbers, as an int.
-  """
-  #### write your solution for this function below here. ####
-  num1 = input("Enter an integer: ")
-  num2 = input("Enter another integer: ")
-  try:
-    num1 = int(num1)
-    num2 = int(num2)
-    if num1 > num2:
-      return num1
-    elif num2 > num1:
-      return num2
-    else:
-      return num1
-  except ValueError:
-    return None
+    :returns: the greatest of the two input numbers, as an int.
+    """
+    #### write your solution for this function below here. ####
+    num1 = input("Enter an integer: ")
+    num2 = input("Enter another integer: ")
+    try:
+        num1 = int(num1)
+        num2 = int(num2)
+        if num1 > num2:
+            return num1
+        elif num2 > num1:
+            return num2
+        else:
+            return num1
+    except ValueError:
+        return None
+
 
 def get_bmi_category():
-  """
-  Asks the user to enter their height (in inches) and weight (in pounds), in that order, and then returns the user's BMI statistical category.
-  Users can enter either integers or floating point numbers.
+    """
+    Asks the user to enter their height (in inches) and weight (in pounds), in that order, and then returns the user's BMI statistical category.
+    Users can enter either integers or floating point numbers.
 
-  The BMI formula was developed in the 1830s, and is still widely used today in public health policy, medical practice, and legislation.
-  The formula for calculating BMI is 703 * weight / height^2.
-  The BMI statistical categories are: 
-  - Very severely underweight (BMI < 15)
-  - Severely underweight (15 <= BMI < 16)
-  - Underweight (16 <= BMI < 18.5)
-  - Normal (18.5 <= BMI < 25)
-  - Overweight (25 <= BMI < 30)
-  - Moderately obese (30 <= BMI < 35)
-  - Severely obese (35 <= BMI < 40)
-  - Very severely obese (BMI >= 40)
+    The BMI formula was developed in the 1830s, and is still widely used today in public health policy, medical practice, and legislation.
+    The formula for calculating BMI is 703 * weight / height^2.
+    The BMI statistical categories are:
+    - Very severely underweight (BMI < 15)
+    - Severely underweight (15 <= BMI < 16)
+    - Underweight (16 <= BMI < 18.5)
+    - Normal (18.5 <= BMI < 25)
+    - Overweight (25 <= BMI < 30)
+    - Moderately obese (30 <= BMI < 35)
+    - Severely obese (35 <= BMI < 40)
+    - Very severely obese (BMI >= 40)
 
-    :returns: The name of the BMI statistical category, based on the inputted height and weight.
-  """
-  #### write your solution for this function below here. ####
-  height = input("Enter height (inches): ")
-  weight = input("Enter weight (pounds): ")
-  try:
-    height = float(height)
-    weight = float(weight)
-    bmi = 703 * weight / (math.pow(height, 2))
-    if bmi < 15:
-      return "Very severely underweight"
-    elif 15 <= bmi < 16:
-      return "Severely underweight"
-    elif 16 <= bmi < 18.5:
-      return "Underweight"
-    elif 18.5 <= bmi < 25:
-      return "Normal"
-    elif 25 <= bmi < 30:
-      return "Overweight"
-    elif 30 <= bmi < 35:
-      return "Moderately obese"
-    elif 35 <= bmi < 40:
-      return "Severely obese"
-    else:
-      return "Very severely obese"
-  except ValueError:
-    return None
+      :returns: The name of the BMI statistical category, based on the inputted height and weight.
+    """
+    #### write your solution for this function below here. ####
+    height = input("Enter height (inches): ")
+    weight = input("Enter weight (pounds): ")
+    try:
+        height = float(height)
+        weight = float(weight)
+        bmi = 703 * weight / (math.pow(height, 2))
+        if bmi < 15:
+            return "Very severely underweight"
+        elif 15 <= bmi < 16:
+            return "Severely underweight"
+        elif 16 <= bmi < 18.5:
+            return "Underweight"
+        elif 18.5 <= bmi < 25:
+            return "Normal"
+        elif 25 <= bmi < 30:
+            return "Overweight"
+        elif 30 <= bmi < 35:
+            return "Moderately obese"
+        elif 35 <= bmi < 40:
+            return "Severely obese"
+        else:
+            return "Very severely obese"
+    except ValueError:
+        return None
+
 
 def get_discount():
-  """
-  Imagine this scenario: a surgical mask distributor will give you a 20% discount on orders of 5000 or more.
-  Each mask individually costs $5.
-  This function asks the user how many masks they would like, and returns the total cost after applying any relevant discount
-  The total cost must be rounded to the nearest integer and formatted as in "$4,000".
+    """
+    Imagine this scenario: a surgical mask distributor will give you a 20% discount on orders of 5000 or more.
+    Each mask individually costs $5.
+    This function asks the user how many masks they would like, and returns the total cost after applying any relevant discount
+    The total cost must be rounded to the nearest integer and formatted as in "$4,000".
 
-    :returns: The cost of the masks, after any discounts, e.g. "$4,000" for 1000 masks.
-  """
-  #### write your solution for this function below here. ####
-  num_masks = input("How many masks would you like? ")
-  price_per_mask = 5
-  try:
-    num_masks = int(num_masks)
-    subtotal = num_masks * price_per_mask
-    if num_masks >= 5000:
-      subtotal = subtotal * 0.8
-    return '$' + format(subtotal, ',.0f')
-  except ValueError:
-    return None
+      :returns: The cost of the masks, after any discounts, e.g. "$4,000" for 1000 masks.
+    """
+    #### write your solution for this function below here. ####
+    num_masks = input("How many masks would you like? ")
+    price_per_mask = 5
+    try:
+        num_masks = int(num_masks)
+        subtotal = num_masks * price_per_mask
+        if num_masks >= 5000:
+            subtotal = subtotal * 0.8
+        return "$" + format(subtotal, ",.0f")
+    except ValueError:
+        return None
+
 
 def is_leap_year():
-  """
-  Determines whether the current year is a leap year.
-  Any year evenly divisible by 4 is a leap year, except century years such as 1900, 2000, 2100, etc. Only century years evenly divisible by 400 are leap years.
+    """
+    Determines whether the current year is a leap year.
+    Any year evenly divisible by 4 is a leap year, except century years such as 1900, 2000, 2100, etc. Only century years evenly divisible by 400 are leap years.
 
-  :returns: True if the current year is a leap year, False otherwise.
-  """
-  year = get_year() # this line is given to you - the variable, year, holds the current year
-  #### write your solution for this function below here. ####
+    :returns: True if the current year is a leap year, False otherwise.
+    """
+    year = (
+        get_year()
+    )  # this line is given to you - the variable, year, holds the current year
+    #### write your solution for this function below here. ####
 
-  if year % 4 == 0:
-    if year % 100 == 0:
-      if year % 400 == 0:
-        return True
-      else:
-        return False
+    if year % 4 == 0:
+        if year % 100 == 0:
+            if year % 400 == 0:
+                return True
+            else:
+                return False
+        else:
+            return True
     else:
-      return True
-  else:
-    return False
+        return False
